@@ -68,14 +68,14 @@ export async function createInvoice(prevState: any, formData: FormData) {
   });
 
   const sender = {
-    email: "hello@demomailtrap.com",
+    email: "hello@demomailtrap.co",
     name: "Jan Marshal",
   };
 
   emailClient.send({
     from: sender,
-    to: [{ email: "jan@alenix.de" }],
-    template_uuid: "3c01e4ee-a9ed-4cb6-bbf7-e57c2ced6c94",
+    to: [{ email: "dakshkothari29@outlook.com" }],
+    template_uuid: "6d808299-87c9-4d65-ba08-0ac88a9c0913",
     template_variables: {
       clientName: submission.value.clientName,
       invoiceNumber: submission.value.invoiceNumber,
@@ -134,14 +134,14 @@ export async function editInvoice(prevState: any, formData: FormData) {
   });
 
   const sender = {
-    email: "hello@demomailtrap.com",
+    email: "hello@demomailtrap.co",
     name: "Jan Marshal",
   };
 
   emailClient.send({
     from: sender,
-    to: [{ email: "jan@alenix.de" }],
-    template_uuid: "9d04aa85-6896-48a8-94e9-b54354a48880",
+    to: [{ email: "dakshkothari29@outlook.com" }],
+    template_uuid: "4f9f1eca00706d31998cc0c3cdbd3623",
     template_variables: {
       clientName: submission.value.clientName,
       invoiceNumber: submission.value.invoiceNumber,

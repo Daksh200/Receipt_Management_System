@@ -81,12 +81,12 @@ export function CreateInvoice({
 
           <div className="flex flex-col gap-1 w-fit mb-6">
             <div className="flex items-center gap-4">
-              <Badge variant="secondary">Draft</Badge>
+              <Badge variant="secondary">GST NO</Badge>
               <Input
                 name={fields.invoiceName.name}
                 key={fields.invoiceName.key}
                 defaultValue={fields.invoiceName.initialValue}
-                placeholder="Test 123"
+                placeholder="A7ABCDE1234F2Z5"
               />
             </div>
             <p className="text-sm text-red-500">{fields.invoiceName.errors}</p>
@@ -127,7 +127,7 @@ export function CreateInvoice({
                   <SelectItem value="USD">
                     United States Dollar -- USD
                   </SelectItem>
-                  <SelectItem value="EUR">Euro -- EUR</SelectItem>
+                  <SelectItem value="INR">Indian Rupees -- INR</SelectItem>
                 </SelectContent>
               </Select>
               <p className="text-red-500 text-sm">{fields.currency.errors}</p>

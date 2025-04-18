@@ -73,7 +73,7 @@ export function EditInvoice({ data }: iAppProps) {
 
           <div className="flex flex-col gap-1 w-fit mb-6">
             <div className="flex items-center gap-4">
-              <Badge variant="secondary">Draft</Badge>
+              <Badge variant="secondary">GST NO</Badge>
               <Input
                 name={fields.invoiceName.name}
                 key={fields.invoiceName.key}
