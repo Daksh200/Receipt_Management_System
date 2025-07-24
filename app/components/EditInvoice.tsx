@@ -27,7 +27,7 @@ import { parseWithZod } from "@conform-to/zod";
 import { invoiceSchema } from "../utils/zodSchemas";
 import { createInvoice, editInvoice } from "../actions";
 import { formatCurrency } from "../utils/formatCurrency";
-import { Invoice } from "@prisma/client";
+import { Invoice } from "lib/generated/prisma";
 
 interface iAppProps {
   data: Invoice;
