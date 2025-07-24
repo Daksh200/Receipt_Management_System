@@ -10,7 +10,7 @@ import prisma from "../utils/db";
 import { requireUser } from "../utils/hooks";
 
 async function getInvoices(userId: string) {
-  const rawData = await prisma.invoice.findMany({
+  const rawData: { createdAt: Date; total: number }[] = await prisma.invoice.findMany({
     where: {
       status: "PAID",
       userId: userId,
@@ -30,8 +30,8 @@ async function getInvoices(userId: string) {
 
   //Group and aggregate data by date
   const aggregatedData = rawData.reduce(
-    (acc: { [key: string]: number }, curr: { createdAt: string; total: number }) => {
-      const date = new Date(curr.createdAt).toLocaleDateString("en-US", {
+    (acc: { [key: string]: number }, curr: { createdAt: Date; total: number }) => {
+      const date = curr.createdAt.toLocaleDateString("en-US", {
         month: "short",
         day: "numeric",
       });
@@ -44,7 +44,7 @@ async function getInvoices(userId: string) {
   );
   //Convert to array and from the object
   const transformedData = Object.entries(aggregatedData)
-    .map(([date, amount]) => ({
+    .map(([date, amount]: [string, number]) => ({
       date,
       amount,
       originalDate: new Date(date + ", " + new Date().getFullYear()),
